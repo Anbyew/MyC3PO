@@ -1,0 +1,52 @@
+python C3POa_preprocessing.py -i data/FAK35861_6c3f45faeb29c19f120b59fee9f6e8023c445fa1_0.fastq -o data -q 9 -l 1000 -s data/Splint.fasta -c config 
+
+
+
+rsync -aP rsync://hgdownload.soe.ucsc.edu/genome/admin/exe/macOSX.x86_64/ ./
+
+
+
+python C3POa_preprocessing.py -i data/FAK35861_6c3f45faeb29c19f120b59fee9f6e8023c445fa1_0.fastq -o data -q 9 -l 1000 -s splint.fasta -c config 
+
+
+python3 C3POa.py -r preprocessed_reads.fastq -p outpath -m path/to/NUC.4.4.mat -s 1000 -d 500 -c /path/to/config_file -o /path/to/consensus.fasta
+
+python C3POa.py -p /Users/anbyew/Desktop/C3POa/data -m /Users/anbyew/Desktop/C3POa/NUC.4.4.mat -c /Users/anbyew/Desktop/C3POa/config -o /Users/anbyew/Desktop/C3POa/data/out.fasta -r /Users/anbyew/Desktop/C3POa/data/splint_reads/0/R2C2_raw_reads.fastq 
+
+python C3POa_postprocessing.py -i data/out.fasta -o data/ -c config -a adapter1.fasta
+
+python C3POa_postprocessing.py -i data/R2C2_full_length_consensus_reads_R1.fasta -o data/ -c config -a adapter2.fasta 
+
+
+Clustal w 
+
+
+
+
+####Preprocess
+python C3POa_preprocessing.py -i data/FAK35861_6c3f45faeb29c19f120b59fee9f6e8023c445fa1_0.fastq -o data -q 9 -l 1000 -s Splint.fasta -c config
+
+
+####Process ###use full path dunno why
+python C3POa.py -p /Users/anbyew/Desktop/C3POa/data5 -m /Users/anbyew/Desktop/C3POa/NUC.4.4.mat -c /Users/anbyew/Desktop/C3POa/config -o /Users/anbyew/Desktop/C3POa/data5/out.fasta -r /Users/anbyew/Desktop/C3POa/data5/splint_reads/0/R2C2_raw_reads.fastq 
+
+####Postprocess
+python C3POa_postprocessing.py -i data/out.fasta -o data/ -c config -a adapter1.fasta
+
+
+####Mandalorion-Episode-II
+python defineAndQuantifyWrapper.py -p ../result/ -u 5 -d 30 -s 200 -r 0.05 -R 3 -i 0 -t 0 -I 100 -T 60 -g hgTables.gtf -m ../NUC.4.4.mat -c content.txt
+
+
+####Sequence alignment & create logo
+https://www.ebi.ac.uk/Tools/msa/clustalo/
+https://weblogo.berkeley.edu/logo.cgi
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+# Order doesn't matter
+# If you use the config file, you should provide paths to all of the programs
+# You need to include all of the example programs
+# Use tabs to separate the program name from the path
+# 
+
+poa	/Users/anbyew/Desktop/C3POa/bio-pipeline/poaV2/poa
+racon	/Users/anbyew/Desktop/C3POa/racon/build/bin/racon
+minimap2	/Users/anbyew/Desktop/C3POa/minimap2/minimap2
+consensus	/Users/anbyew/Desktop/C3POa/consensus.py
+blat	/Users/anbyew/Desktop/C3POa/blat/blat/blat
+gonk	/Users/anbyew/Desktop/C3POa/gonk/gonk
